@@ -1,0 +1,23 @@
+/* Global style variables */
+:root {
+  --fonts: "Spartan", sans-serif;
+  --primary-dark: hsl(300, 43%, 22%);
+  --primary-light: hsl(333, 80%, 67%);
+  --neutral-dark: hsl(303, 10%, 53%);
+  --neutral-light: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+}
+
+/* A bunch of resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

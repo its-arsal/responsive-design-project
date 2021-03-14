@@ -1,0 +1,207 @@
+/* Importing base styles */
+@import "base.css";
+
+/*
+ * These are some common styles for mobile and desktop
+ */
+
+body {
+  font-family: var(--fonts);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--neutral-dark);
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: grid;
+}
+
+.intro,
+.badge-wrapper,
+.badge,
+.card-wrapper {
+  display: flex;
+}
+
+.intro {
+  grid-area: intro;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro .intro-heading {
+  color: var(--primary-dark);
+  line-height: 1;
+}
+
+.badge-wrapper {
+  grid-area: badges;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  font-weight: 700;
+  color: var(--primary-dark);
+  background-color: var(--neutral-light);
+
+  border-radius: 5px;
+  padding: 1rem 2rem;
+
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-wrapper {
+  grid-area: cards;
+}
+
+.card {
+  background-color: var(--primary-dark);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+
+  overflow: hidden;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.customer .customer-info {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.customer .customer-img {
+  max-width: 50px;
+  border-radius: 25px;
+  margin-right: 1.5rem;
+}
+
+.customer .customer-name,
+.customer .customer-comment {
+  color: var(--neutral-light);
+}
+
+.customer .customer-tag {
+  font-weight: 500;
+  color: var(--primary-light);
+}
+
+.customer .customer-comment {
+  font-weight: 500;
+}
+
+footer .attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-dark);
+  padding: 2rem;
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 375px) {
+  .container {
+    grid-template-areas: "intro" "badges" "cards";
+    grid-gap: 1rem;
+    background-image: url(/images/bg-pattern-top-mobile.svg),
+      url(/images/bg-pattern-bottom-mobile.svg);
+    background-position: right top, right bottom;
+    background-repeat: no-repeat;
+    background-size: 70%, 40%;
+    padding: 5rem 5%;
+  }
+
+  .intro,
+  .badge-wrapper,
+  .card-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .intro .intro-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .intro .intro-text {
+    text-align: center;
+  }
+
+  .badge,
+  .card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge,
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge-stars {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1440px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "intro badges"
+      "cards cards";
+    grid-gap: 3rem;
+    background-image: url(/images/bg-pattern-top-desktop.svg),
+      url(/images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+    background-size: 40%, 70%;
+    padding: 5% 10%;
+  }
+
+  .intro {
+    padding-right: 20%;
+  }
+
+  .intro .intro-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .badge-wrapper {
+    padding-left: 5%;
+  }
+
+  .badge {
+    max-width: 450px;
+    margin-bottom: 1rem;
+  }
+
+  .badge-stars {
+    margin-right: 1rem;
+  }
+
+  #badge-1,
+  #card-1 {
+    align-self: flex-start;
+  }
+
+  #badge-2,
+  #card-2 {
+    align-self: center;
+  }
+
+  #badge-3,
+  #card-3 {
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  .card-wrapper {
+    min-height: 260px;
+  }
+
+  .card {
+    margin-right: 1rem;
+  }
+}
